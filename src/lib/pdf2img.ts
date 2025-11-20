@@ -5,7 +5,6 @@ export interface PdfConversionResult {
 }
 
 let pdfjsLib: any = null;
-const isLoading = false;
 let loadPromise: Promise<any> | null = null;
 
 async function loadPdfJs(): Promise<any> {
@@ -17,8 +16,7 @@ async function loadPdfJs(): Promise<any> {
     loadPromise = import("pdfjs-dist/build/pdf.mjs").then((lib) => {
         // Set the worker source to use local file
         lib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
-        pdfjsLib = lib;
-        isLoading = false;
+        pdfjsLib = lib
         return lib;
     });
 
