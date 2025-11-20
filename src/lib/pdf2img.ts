@@ -5,7 +5,7 @@ export interface PdfConversionResult {
 }
 
 let pdfjsLib: any = null;
-//let isLoading = false;
+const isLoading = false;
 let loadPromise: Promise<any> | null = null;
 
 async function loadPdfJs(): Promise<any> {
